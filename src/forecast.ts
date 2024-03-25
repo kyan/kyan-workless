@@ -106,6 +106,7 @@ export async function fetchForecastUsers() {
 
     return users
       .filter((u) => !u.archived || u.login === "enabled")
+      .filter((u) => u.email)
       .map((user: ForecastUser) => {
         const data: User = {
           workless: false,
